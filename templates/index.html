@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منظمة فوانيس الخير - استمارة طلب عضوية</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body { font-family: 'Cairo', Tahoma, sans-serif; background-color: #f4efe6; margin: 0; padding: 10px; color: #2c3e50; }
+        .form-container { background: #fdfbf7; border: 8px double #0d5c3a; padding: 15px; border-radius: 8px; max-width: 750px; margin: auto; box-shadow: 0 0 15px rgba(0,0,0,0.15); }
+        .header { background: #0d5c3a; color: #d4af37; text-align: center; padding: 12px; border-radius: 6px; border: 2px solid #d4af37; }
+        .header h1 { margin: 0; font-size: 22px; }
+        .header p { margin: 3px 0; color: #fff; font-size: 13px; }
+        .header small { color: #d4af37; font-size: 11px; }
+        
+        .section-box { border: 1.5px solid #b8975a; border-radius: 6px; padding: 10px; margin-top: 12px; background: #fffdf9; }
+        .section-title { background: #0d5c3a; color: #d4af37; padding: 4px 10px; border-radius: 12px; display: inline-block; font-size: 13px; font-weight: bold; border: 1px solid #d4af37; margin-bottom: 8px; }
+        
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+        
+        .field-group { margin-bottom: 8px; }
+        label { display: block; font-weight: bold; margin-bottom: 2px; font-size: 12px; color: #0d5c3a; }
+        input, select, textarea { width: 100%; padding: 6px; border: 1px solid #b8975a; border-radius: 4px; box-sizing: border-box; background: #fff; font-size: 12px; }
+        
+        .rules-box { font-size: 11px; line-height: 1.5; color: #333; background: #f9f6ed; padding: 8px; border-right: 3px solid #0d5c3a; }
+        .rules-box ol { margin: 0; padding-right: 15px; }
+        
+        .pledge-box { background: #f4efe6; padding: 8px; border-radius: 4px; margin-top: 8px; font-size: 12px; }
+        
+        .footer-credits { text-align: center; margin-top: 20px; font-weight: bold; color: #0d5c3a; font-size: 11px; direction: ltr; border-top: 1px dashed #b8975a; padding-top: 8px; }
+        .btn-submit { background: #0d5c3a; color: #d4af37; font-weight: bold; border: 2px solid #d4af37; width: 100%; padding: 10px; font-size: 14px; border-radius: 6px; cursor: pointer; margin-top: 15px; }
+        .btn-submit:hover { background: #0b4a2e; }
+    </style>
+</head>
+<body>
+
+<div class="form-container" id="form-pdf">
+    <div class="header">
+        <h1>منظمة فوانيس الخير</h1>
+        <p>نكن أينما كانت الحوجة</p>
+        <small>السودان - الولاية الشمالية | استمارة طلب عضوية - رقم: (2026) | هاتف: +249 91 530 0068</small>
+    </div>
+
+    <form id="membershipForm">
+        <!-- اختيار المشرف -->
+        <div class="section-box" style="border-color: #0d5c3a; background: #f0f7f4;">
+            <div class="section-title">اختر المشرف المسؤول</div>
+            <div class="field-group">
+                <select id="supervisor" required>
+                    <option value="">-- اضغط لاختيار المشرف المباشر --</option>
+                    <option value="0913270219">المشرف الأول - حامدنارتي (0913270219)</option>
+                    <option value="0124037264">المشرف الثاني - دنقلا (0124037264)</option>
+                    <option value="0119089746">المشرف الثالث - السليم (0119089746)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <!-- 1. البيانات الشخصية -->
+            <div class="section-box">
+                <div class="section-title">1. البيانات الشخصية</div>
+                <div class="field-group"><label>الاسم الكامل رباعياً:</label><input type="text" id="full
